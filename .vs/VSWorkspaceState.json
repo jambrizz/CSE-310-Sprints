@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SprintOne_Employee_Management_System",
+    "\\SprintOne_Employee_Management_System\\SprintOne_Employee_Management_System"
   ],
-  "SelectedNode": "\\README.md",
+  "SelectedNode": "\\SprintOne_Employee_Management_System\\SprintOne_Employee_Management_System\\Program.cs",
   "PreviewInSolutionExplorer": false
 }

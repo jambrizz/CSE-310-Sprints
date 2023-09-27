@@ -9,7 +9,9 @@ namespace SprintOne_Employee_Management_System
     {
         public static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Company com = new Company();
+            com.runCompanyApp();
+
         }
     }
 }
