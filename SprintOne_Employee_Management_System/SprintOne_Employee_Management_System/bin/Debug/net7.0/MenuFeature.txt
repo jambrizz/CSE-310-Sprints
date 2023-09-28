@@ -1,8 +1,8 @@
 ******************************************
 **  Welcome to Employer Solutiuons App! **
-**	 Please select an option below:     **
+**   Please select an option below:     **
 **  1. Add a new employee               **
-**  2. update an employee               **
+**  2. Update an employee               **
 **  3. Delete an employee               **
 **  4. View all employees               **
 **  5. Exit                             **
