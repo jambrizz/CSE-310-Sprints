@@ -10,25 +10,13 @@ public class Company
 	private List<string> employees = new List<string>();
 	public void runCompanyApp()
 	{
-        string[] menu = File.ReadAllLines("MenuFeature.txt");
-        foreach (string line in menu)
+        bool runProgram = true;
+        do
         {
-            Console.WriteLine(line);
-        }
-        Console.WriteLine("Please enter your choice: ");
-        string choice = Console.ReadLine();
-
-        //TODO: Fix this section of code it causes and error in the build
-        //Maybe change to a do while loop
-
-        /*
-		bool runProgram = true;
-		while (runProgram == true)
-		{
-            int featureChoice = 0;
+            int selected = 0;
             bool validChoice = false;
-			while (validChoice == false)
-			{
+            while (validChoice == false)
+            {
                 string[] menu = File.ReadAllLines("MenuFeature.txt");
                 foreach (string line in menu)
                 {
@@ -37,23 +25,28 @@ public class Company
                 Console.WriteLine("Please enter your choice: ");
                 string choice = Console.ReadLine();
 
-                validChoice = int.TryParse(choice, out int featureChoice);
-
-                if (validChoice == false)
-                {
-                    Console.WriteLine("Please enter a valid choice.");
+                bool isNumber = int.TryParse(choice, out selected);
+                Console.WriteLine(isNumber);
+                if (isNumber == false)
+                { 
+                    Console.Clear();
+                    Console.WriteLine("Please enter a valid number");
+                    Console.WriteLine();
                 }
-                else if (featureChoice < 1 || featureChoice > 5)
+                else if (isNumber == true && selected <1 || selected > 5)
                 {
-                    Console.WriteLine("Please enter a valid choice.");
+                    Console.Clear();
+                    Console.WriteLine($"You selected {selected}, which is not a valid option. \nPlease enter a number between 1 - 5.");
+                    Console.WriteLine();
                 }
                 else
                 {
+                    Console.Clear();
                     validChoice = true;
                 }
             }
-
-            switch (featureChoice)
+            
+            switch (selected)
             {
                 case 1:
                     Console.WriteLine("Add a new employee");
@@ -65,16 +58,19 @@ public class Company
                     Console.WriteLine("Delete an employee");
                     break;
                 case 4:
-                    Console.WrtieLine("View all employees");
+                    Console.WriteLine("View all employees");
                     break;
                 case 5:
-                    Console.WriteLine("Exit");
-                    Console.ReadKey();
-                    runProgram = false;
+                    Console.WriteLine("You selected to Exit");
+                    //Environment.Exit(0);
+                    break;
+                default:
+                    Console.WriteLine("You selected an invalid option");
                     break;
             }
-           
+            
         }
-        */
+        while (runProgram == true);
+
     }
 }
