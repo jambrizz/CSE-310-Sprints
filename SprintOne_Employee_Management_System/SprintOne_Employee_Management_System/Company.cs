@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.IO;
 using System.Text;
+using System.Diagnostics;
 
 public class Company
 {
@@ -13,7 +14,7 @@ public class Company
         bool runProgram = true;
         do
         {
-            int selected = 0;
+            int selection = 0;
             bool validChoice = false;
             while (validChoice == false)
             {
@@ -25,28 +26,29 @@ public class Company
                 Console.WriteLine("Please enter your choice: ");
                 string choice = Console.ReadLine();
 
-                bool isNumber = int.TryParse(choice, out selected);
-                Console.WriteLine(isNumber);
-                if (isNumber == false)
+                validChoice = int.TryParse(choice, out selection);
+                //Console.WriteLine();
+                if (validChoice == false)
                 { 
                     Console.Clear();
                     Console.WriteLine("Please enter a valid number");
                     Console.WriteLine();
                 }
-                else if (isNumber == true && selected <1 || selected > 5)
+                else if (validChoice == true && selection <1 || selection > 5)
                 {
                     Console.Clear();
-                    Console.WriteLine($"You selected {selected}, which is not a valid option. \nPlease enter a number between 1 - 5.");
+                    Console.WriteLine($"You selected {selection}, which is not a valid option. \nPlease enter a number between 1 - 5.");
                     Console.WriteLine();
                 }
-                else
+                else if (validChoice == true && selection >= 1 && selection <= 5)
                 {
+                    //selection = selected;
                     Console.Clear();
-                    validChoice = true;
+
                 }
             }
             
-            switch (selected)
+            switch (selection)
             {
                 case 1:
                     Console.WriteLine("Add a new employee");
