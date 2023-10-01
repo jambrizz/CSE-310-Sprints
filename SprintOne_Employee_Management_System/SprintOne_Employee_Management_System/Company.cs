@@ -51,7 +51,12 @@ public class Company
             switch (selection)
             {
                 case 1:
-                    Console.WriteLine("Add a new employee");
+                    //Case 1 is to add an employee to the list of employees
+                    Console.Clear();
+                    Employee e = new Employee();
+                    e.addEmployee();
+                    string employeeToAdd = e.getEmployeeInfo();
+                    employees.Add(employeeToAdd);
                     break;
                 case 2:
                     Console.WriteLine("Update an employee");
@@ -60,7 +65,27 @@ public class Company
                     Console.WriteLine("Delete an employee");
                     break;
                 case 4:
-                    Console.WriteLine("View all employees");
+                    //Case 4 is to view all employees for the company
+                    Employee e4 = new Employee();
+                    Console.Clear();
+                    Console.WriteLine("********************************************");
+                    int lenght = employees.Count;
+                    for (int i = 0; i < lenght; i++)
+                    {
+                        int number = i + 1;
+                        string firstNameRaw = employees[i].Split("FirstName:")[1];
+                        string firstName = firstNameRaw.Split('|')[0];
+                        string lastNameRaw = employees[i].Split("LastName:")[1];
+                        string lastName = lastNameRaw.Split('|')[0];
+                        Console.WriteLine($"{number}. {firstName} {lastName}");
+                    }
+                    Console.WriteLine("********************************************\n\n");
+                    Console.WriteLine("Enter the corresponding number of the employee you wish to see.");
+                    int employeeNumber = Convert.ToInt32(Console.ReadLine());
+                    int employeeIndex = employeeNumber - 1;
+                    string employee = employees[employeeIndex];
+                    e4.splitEmployeeInfo(employee);
+                    e4.EmployeeInfo();
                     break;
                 case 5:
                     Console.WriteLine("You selected to Exit");

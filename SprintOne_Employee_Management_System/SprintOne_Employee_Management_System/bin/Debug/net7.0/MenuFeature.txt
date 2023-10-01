@@ -4,6 +4,6 @@
 **  1. Add a new employee               **
 **  2. Update an employee               **
 **  3. Delete an employee               **
-**  4. View all employees               **
+**  4. View an employee                 **
 **  5. Exit                             **
 ******************************************
