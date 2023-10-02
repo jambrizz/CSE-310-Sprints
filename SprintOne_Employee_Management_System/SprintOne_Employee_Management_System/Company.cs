@@ -7,11 +7,32 @@ using System.Diagnostics;
 
 public class Company
 {
-	//private string _menu = "MenuFeature.txt";
 	private List<string> employees = new List<string>();
 	
     public void runCompanyApp()
 	{
+        bool fileExists = File.Exists("EmployeeData.txt");
+        if (fileExists == true)
+        { 
+            int count = File.ReadAllLines("EmployeeData.txt").Length;
+            if (count > 0)
+            {
+                string[] employeeList = File.ReadAllLines("EmployeeData.txt");
+                foreach (string employee in employeeList)
+                {
+                    employees.Add(employee);
+                }
+                Console.WriteLine($"Employee data loaded successfully. Employee total {count}");
+            }
+            else
+            {
+                Console.WriteLine("There are no employees in the system.");
+            }
+        }
+        else
+        {
+            Console.WriteLine("File doesn't exist!");
+        }
         bool runProgram = true;
         do
         {
@@ -28,7 +49,6 @@ public class Company
                 string choice = Console.ReadLine();
 
                 validChoice = int.TryParse(choice, out selection);
-                //Console.WriteLine();
                 if (validChoice == false)
                 { 
                     Console.Clear();
@@ -43,9 +63,7 @@ public class Company
                 }
                 else if (validChoice == true && selection >= 1 && selection <= 5)
                 {
-                    //selection = selected;
                     Console.Clear();
-
                 }
             }
             
@@ -60,6 +78,7 @@ public class Company
                     employees.Add(employeeToAdd);
                     break;
                 case 2:
+                    //Case 2 is to update an employee from the list of employees
                     Employee e2 = new Employee();
                     Console.Clear();
                     DisplayListOfEmployees();
@@ -71,8 +90,6 @@ public class Company
                     e2.updateEmployee();
                     string updatedEmployee = e2.getEmployeeInfo();
                     employees[employeeIndexToUpdate] = updatedEmployee;
-
-                    //Console.WriteLine("Update an employee");
                     break;
                 case 3:
                     //Case 3 is to delete an employee from the list of employees
@@ -98,12 +115,14 @@ public class Company
                     e4.EmployeeInfo();
                     break;
                 case 5:
+                    //Case 5 is to exit the program
+                    Console.Clear();
+                    File.WriteAllLines("EmployeeData.txt", employees);
                     Console.WriteLine("You selected to Exit");
                     Console.WriteLine("Thank you for using the Employee Management System!");
                     Console.WriteLine("Press any key to exit the program.");
                     Console.ReadKey();
                     runProgram = false;
-                    //Environment.Exit(0);
                     break;
                 default:
                     Console.WriteLine("You selected an invalid option");

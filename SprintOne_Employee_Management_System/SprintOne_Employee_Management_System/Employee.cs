@@ -23,6 +23,7 @@ public class Employee
     private string _typeOfEmployment;
     private bool _employed;
 
+    //This method is to generate a random employee ID
     private int employeeID()
     {
         Random random = new Random();
@@ -290,7 +291,6 @@ public class Employee
         Console.Clear();
         Console.WriteLine("Employee added successfully!");
         Console.WriteLine();
-        //Console.WriteLine(getEmployeeInfo());
     }
 
     public string getEmployeeInfo()
