@@ -9,7 +9,8 @@ public class Company
 {
 	//private string _menu = "MenuFeature.txt";
 	private List<string> employees = new List<string>();
-	public void runCompanyApp()
+	
+    public void runCompanyApp()
 	{
         bool runProgram = true;
         do
@@ -59,27 +60,36 @@ public class Company
                     employees.Add(employeeToAdd);
                     break;
                 case 2:
-                    Console.WriteLine("Update an employee");
+                    Employee e2 = new Employee();
+                    Console.Clear();
+                    DisplayListOfEmployees();
+                    Console.WriteLine("Enter the corresponding number of the employee you wish to update.");
+                    int employeeNumberToUpdate = Convert.ToInt32(Console.ReadLine());
+                    int employeeIndexToUpdate = employeeNumberToUpdate - 1;
+                    string employeeToUpdate = employees[employeeIndexToUpdate];                    
+                    e2.splitEmployeeInfo(employeeToUpdate);
+                    e2.updateEmployee();
+                    string updatedEmployee = e2.getEmployeeInfo();
+                    employees[employeeIndexToUpdate] = updatedEmployee;
+
+                    //Console.WriteLine("Update an employee");
                     break;
                 case 3:
-                    Console.WriteLine("Delete an employee");
+                    //Case 3 is to delete an employee from the list of employees
+                    Console.Clear();
+                    DisplayListOfEmployees();
+                    Console.WriteLine("Enter the corresponding number of the employee you wish to delete from the company record.");
+                    int employeeNumberToDelete = Convert.ToInt32(Console.ReadLine());
+                    int employeeIndexToDelete = employeeNumberToDelete - 1;
+                    employees.RemoveAt(employeeIndexToDelete);
+                    Console.Clear();
+                    Console.WriteLine("Employee deleted successfully!");
                     break;
                 case 4:
-                    //Case 4 is to view all employees for the company
+                    //Case 4 is to view a selected employee from the company
                     Employee e4 = new Employee();
                     Console.Clear();
-                    Console.WriteLine("********************************************");
-                    int lenght = employees.Count;
-                    for (int i = 0; i < lenght; i++)
-                    {
-                        int number = i + 1;
-                        string firstNameRaw = employees[i].Split("FirstName:")[1];
-                        string firstName = firstNameRaw.Split('|')[0];
-                        string lastNameRaw = employees[i].Split("LastName:")[1];
-                        string lastName = lastNameRaw.Split('|')[0];
-                        Console.WriteLine($"{number}. {firstName} {lastName}");
-                    }
-                    Console.WriteLine("********************************************\n\n");
+                    DisplayListOfEmployees();
                     Console.WriteLine("Enter the corresponding number of the employee you wish to see.");
                     int employeeNumber = Convert.ToInt32(Console.ReadLine());
                     int employeeIndex = employeeNumber - 1;
@@ -89,6 +99,10 @@ public class Company
                     break;
                 case 5:
                     Console.WriteLine("You selected to Exit");
+                    Console.WriteLine("Thank you for using the Employee Management System!");
+                    Console.WriteLine("Press any key to exit the program.");
+                    Console.ReadKey();
+                    runProgram = false;
                     //Environment.Exit(0);
                     break;
                 default:
@@ -97,7 +111,23 @@ public class Company
             }
             
         }
-        while (runProgram == true);
+        while (runProgram == true);        
+    }
 
+    private void DisplayListOfEmployees()
+    {
+        Console.WriteLine("*********** Employees List  ****************");
+        Console.WriteLine("********************************************");
+        int lenght = employees.Count;
+        for (int i = 0; i < lenght; i++)
+        {
+            int number = i + 1;
+            string firstNameRaw = employees[i].Split("FirstName:")[1];
+            string firstName = firstNameRaw.Split('|')[0];
+            string lastNameRaw = employees[i].Split("LastName:")[1];
+            string lastName = lastNameRaw.Split('|')[0];
+            Console.WriteLine($"{number}. {firstName} {lastName}");
+        }
+        Console.WriteLine("********************************************\n\n");
     }
 }
