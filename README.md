@@ -5,9 +5,9 @@ Hello! My name is Jovani Ambriz and I am a student at BYUI and this is my reposi
 This is going to be the repository I will use for all future assignments in this course to work on my programming skills.
 
 ## Videos
-Week 1:
+* Week 1:
 [Software Demo Video](https://youtu.be/fZ0BJqXalm4)
-Week 2 & 3 Sprint:
+* Week 2 & 3 Sprint:
 [Software Demo Video](https://youtu.be/MaSY4vMzblA)
 
 # Development Environment
@@ -25,6 +25,5 @@ Week 2 & 3 Sprint:
 
 # Useful Websites
 
-{Make a list of websites that you found helpful in this project}
 * [Geeks for Geeks](https://www.geeksforgeeks.org/)
 * [Microsoft .Net](https://learn.microsoft.com/en-us/dotnet/csharp/programming-guide/?redirectedfrom=MSDN)
