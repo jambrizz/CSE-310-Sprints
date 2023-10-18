@@ -1,0 +1,3 @@
+C:\Users\ambri\OneDrive\Documents\BYU-I\Sprints\Todo_List_App\Todo_List_App\obj\Debug\Todo_List_App.njsproj.AssemblyReference.cache
+C:\Users\ambri\OneDrive\Documents\BYU-I\Sprints\Todo_List_App\Todo_List_App\obj\Debug\Todo_List_App.njsproj.CoreCompileInputs.cache
+C:\Users\ambri\OneDrive\Documents\BYU-I\Sprints\Todo_List_App\Todo_List_App\bin\Microsoft.NodejsTools.WebRole.dll
