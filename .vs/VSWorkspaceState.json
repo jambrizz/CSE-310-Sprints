@@ -1,8 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\SprintOne_Employee_Management_System",
-    "\\SprintOne_Employee_Management_System\\SprintOne_Employee_Management_System"
+    "\\Todo_List_App",
+    "\\Todo_List_App\\Todo_List_App",
+    "\\Todo_List_App\\Todo_List_App\\views"
   ],
+  "SelectedNode": "\\Todo_List_App\\Todo_List_App\\views\\viewTemplate.html",
   "PreviewInSolutionExplorer": false
 }

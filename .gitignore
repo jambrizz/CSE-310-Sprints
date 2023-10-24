@@ -1,0 +1,5 @@
+.npm
+.eslintcache
+.env
+.env.test
+.cache
