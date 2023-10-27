@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\Todo_List_App",
+    "\\Todo_List_App\\Todo_List_App",
+    "\\Todo_List_App\\Todo_List_App\\js",
+    "\\Todo_List_App\\Todo_List_App\\views"
   ],
+  "SelectedNode": "\\Todo_List_App\\Todo_List_App\\views\\Create.html",
   "PreviewInSolutionExplorer": false
 }
