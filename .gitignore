@@ -3,3 +3,4 @@
 .env
 .env.test
 .cache
+/Store_Inventory_app/.vs/Store_Inventory_app/v17
